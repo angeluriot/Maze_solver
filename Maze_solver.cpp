@@ -5,7 +5,7 @@
 #include <ctime>
 #include <iomanip>
 
-
+//test
 
 // ---------- Affichage ----------
 
@@ -14,7 +14,7 @@
 HWND myconsole = GetConsoleWindow();
 HDC mydc = GetDC(myconsole);
 
-std::vector<std::vector<int>> maze; // Structure définissant le labyrinthe
+std::vector<std::vector<int>> maze; // Structure dÃ©finissant le labyrinthe
 
 int maze_size = 101; // Taille du labyrinthe
 
@@ -23,8 +23,8 @@ int zoom = 7; // Taille des cases en pixel
 int screen_x = maze_size * zoom;
 int screen_y = maze_size * zoom;
 
-int gap_x = 200; // Décalage en X
-int gap_y = 100; // Décalage en Y
+int gap_x = 200; // DÃ©calage en X
+int gap_y = 100; // DÃ©calage en Y
 
 
 
@@ -83,11 +83,11 @@ void set_size(int size)
 
 
 
-// ---------- Génération du labyrinthe ----------
+// ---------- GÃ©nÃ©ration du labyrinthe ----------
 
 
 
-// Vérifie si le labyrinthe est terminé
+// VÃ©rifie si le labyrinthe est terminÃ©
 
 bool is_finished()
 {
@@ -105,7 +105,7 @@ bool is_finished()
 
 
 
-// Remplie le labyrinthe de telle sorte à ce que chaque case soit entourée par des murs
+// Remplie le labyrinthe de telle sorte Ã  ce que chaque case soit entourÃ©e par des murs
 
 void create_grid()
 {
@@ -151,7 +151,7 @@ void create_grid()
 
 
 
-// Casse les murs jusqu'à ce que toutes les cases soient accessibles
+// Casse les murs jusqu'Ã  ce que toutes les cases soient accessibles
 // (Si "is_hard" = true, alors le labyrinthe sera complexe, sinon il sera simple)
 
 void maze_generator(const bool &is_complex)
@@ -219,11 +219,11 @@ void maze_generator(const bool &is_complex)
 
 
 
-// ---------- Résolution du labyrinthe ----------
+// ---------- RÃ©solution du labyrinthe ----------
 
 
 
-// Donne une couleur à partir de la distance entre une case et la sortie
+// Donne une couleur Ã  partir de la distance entre une case et la sortie
 
 COLORREF color(int value, const int &max_value)
 {
@@ -243,7 +243,7 @@ COLORREF color(int value, const int &max_value)
 
 
 
-// Résout le labyrinthe
+// RÃ©sout le labyrinthe
 
 void maze_solver()
 {
@@ -264,7 +264,7 @@ void maze_solver()
 	maze.at(maze_size - 2).at(maze_size - 1) = 1;
 	set_point(maze_size - 2, maze_size - 1, RGB(255, 255, 0));
 
-	while (maze.at(1).at(1) == 0) // Donne à chaque case la distance entre sa position et la sortie (ainsi qu'une couleur correspondante)
+	while (maze.at(1).at(1) == 0) // Donne Ã  chaque case la distance entre sa position et la sortie (ainsi qu'une couleur correspondante)
 	{
 		temp = maze;
 		distance++;
@@ -307,7 +307,7 @@ void maze_solver()
 	int x = 1;
 	int y = 1;
 
-	while (x != maze_size - 2 or y != maze_size - 2) // Trace le chemin vert (le chemin le plus court entre l'entrée et la sortie)
+	while (x != maze_size - 2 or y != maze_size - 2) // Trace le chemin vert (le chemin le plus court entre l'entrÃ©e et la sortie)
 	{
 		if (maze.at(x).at(y - 1) <= maze.at(x).at(y + 1) and maze.at(x).at(y - 1) <= maze.at(x - 1).at(y) and maze.at(x).at(y - 1) <= maze.at(x + 1).at(y))
 			y = y - 1;
