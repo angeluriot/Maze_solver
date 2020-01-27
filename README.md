@@ -20,12 +20,21 @@ Ce dépôt contient le code source d'un programme capable de générer et de ré
 
 # Utilisation
 
-Vous trouverez dans le fichier [main.cpp](https://github.com/angeluriot/...) le morceau
-de code permettant de modifier les différents paramètres de la simulation :
+Vous trouverez dans le fichier [main.cpp](https://github.com/angeluriot/Maze_solver/blob/master/sources/main.cpp) le morceau
+de code permettant de modifier les différents paramètres du programme :
 
 ```cpp
 
+// ---------- Choix de l'utilisateur ----------
 
+int  zoom = 10;           // Taille des cases (en pixels)
+
+int  maze_size = 101;     // Taille du labyrinthe (en cases)
+bool is_complex = true;   // Choisir si le labyrinthe sera complexe ou non
+
+int  nb_simulation = 100; // Nombre de simulations
+
+// ---------- Lancement du programme ----------
 
 ```
 
@@ -48,7 +57,7 @@ sur Windows, il vous suffit de télécharger l'intégralité du dépôt et de fa
 
 # Releases
 
-Vous pouvez tester directement le programme sans installation en consultant les [Releases](https://github.com/angeluriot/.. .)
+Vous pouvez tester directement le programme sans installation en consultant les [Releases](https://github.com/angeluriot/Maze_solver/releases)
 
 <br/>
 
