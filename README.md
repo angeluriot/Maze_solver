@@ -48,7 +48,7 @@ sur Windows, il vous suffit de télécharger l'intégralité du dépôt et de fa
 
 # Releases
 
-Vous pouvez tester directement le programme sans installation en consultant les [Releases](https://github.com/angeluriot/...)
+Vous pouvez tester directement le programme sans installation en consultant les [Releases](https://github.com/angeluriot/.. .)
 
 <br/>
 
