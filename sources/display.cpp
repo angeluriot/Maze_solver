@@ -7,7 +7,7 @@
 
 void show_pixel(int x, int y, const sf::Color& color, int zoom, sf::RectangleShape& pixel, sf::RenderWindow& window)
 {
-	pixel.setPosition(sf::Vector2f(GAP + zoom * x, GAP + zoom * y));
+	pixel.setPosition(sf::Vector2f(GAP + zoom * y, GAP + zoom * x));
 	pixel.setFillColor(color);
 	window.draw(pixel);
 	window.display();
@@ -25,7 +25,7 @@ void show_maze(std::vector<std::vector<int>>& maze, int maze_size, int zoom, sf:
 		{
 			if (maze[i][j] == -1)
 			{
-				pixel.setPosition(sf::Vector2f(GAP + zoom * i, GAP + zoom * j));
+				pixel.setPosition(sf::Vector2f(GAP + zoom * j, GAP + zoom * i));
 				pixel.setFillColor(sf::Color::Black);
 				window.draw(pixel);
 			}

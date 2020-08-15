@@ -81,9 +81,9 @@ void maze_solver(std::vector<std::vector<int>>& maze, int maze_size, int zoom, s
 	while (x != maze_size - 2 or y != maze_size - 2) // Trace le chemin vert (le chemin le plus court entre l'entrée et la sortie)
 	{
 		up = maze[x][y - 1];
-		down = maze[x][y + 1];;
-		left = maze[x - 1][y];;
-		right = maze[x + 1][y];;
+		down = maze[x][y + 1];
+		left = maze[x - 1][y];
+		right = maze[x + 1][y];
 
 		if (up <= down and up <= left and up <= right)
 			y = y - 1;
