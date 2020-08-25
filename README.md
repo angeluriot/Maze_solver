@@ -28,24 +28,18 @@ Voici une vidéo expliquant le fonctionnement de l'algorithme :
 
 # Utilisation
 
-Le programme comporte un menu intégré pour changer les différents paramètres de la simulation, si vous souhaitez uniquement tester la simulation, vous pouvez consulter les [**Releases**](https://github.com/angeluriot/Maze_solver/releases).
-
-<br/>
-
-<p align="center">
-	<img src="https://i.imgur.com/bgHVsj3.png" width="700">
-</p>
+Ce programme ne comporte pas de menu car il n'y a pas de paramètre pertinent à modifier, il lancera juste des essais aléatoires en continu, si vous souhaitez uniquement tester le programme, vous pouvez consulter les [**Releases**](https://github.com/angeluriot/Maze_solver/releases).
 
 <br/>
 
 # Tests
 
-Voici un test sous forme de gif animé avec les paramètres présentés dans l'image de la partie [**Utilisation**](#utilisation) :
+Voici un test sous forme de gif animé :
 
 <br/>
 
 <p align="center">
-	<img src="https://i.imgur.com/6u8uwZK.gif" width="700">
+	<img src="https://i.imgur.com/898ieW2.gif" width="500">
 </p>
 
 <br/>
