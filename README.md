@@ -1,6 +1,6 @@
 # Maze solver
 
-![release](https://img.shields.io/badge/release-v1.0-blueviolet)
+![release](https://img.shields.io/badge/release-v2.0-blueviolet)
 ![language](https://img.shields.io/badge/language-C%2B%2B-0052cf)
 ![library](https://img.shields.io/badge/library-SFML-00cf2c)
 ![size](https://img.shields.io/badge/size-32%20Mo-f12222)
