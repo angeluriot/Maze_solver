@@ -1,14 +1,14 @@
-# Maze solver
+# Mazes solver
 
-![release](https://img.shields.io/badge/release-v3.0-blueviolet)
-![language](https://img.shields.io/badge/language-C%2B%2B-0052cf)
-![library](https://img.shields.io/badge/library-SFML-00cf2c)
-![size](https://img.shields.io/badge/size-32%20Mo-f12222)
-![license](https://img.shields.io/badge/license-CC--0-0bb9ec)
+![Release](https://img.shields.io/badge/Release-v1.0-blueviolet)
+![Language](https://img.shields.io/badge/Language-C%2B%2B-0052cf)
+![Library](https://img.shields.io/badge/Library-SFML-00cf2c)
+![Size](https://img.shields.io/badge/Size-32%20Mo-f12222)
+![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
 
 <br/>
 
-Ce dépôt contient le code source d'un programme capable de générer et de résoudre des labyrinthes.
+This program is able to generate and solve mazes.
 
 <br/>
 
@@ -18,32 +18,18 @@ Ce dépôt contient le code source d'un programme capable de générer et de ré
 
 <br/>
 
-# Vidéo
+# Dependencies
 
-Voici une vidéo expliquant le fonctionnement de l'algorithme :
-
-[**► CRÉER ET RÉSOUDRE UN LABYRINTHE AUTOMATIQUEMENT 🗺️💻**](https://www.youtube.com/watch?v=K7vaT8bZRuk)
+* SFML
 
 <br/>
 
-# Utilisation
+# Notes
 
-Ce programme ne comporte pas de menu car il n'y a pas de paramètre pertinent à modifier, il lancera juste des essais aléatoires en continu, si vous souhaitez uniquement tester le programme, vous pouvez consulter les [**Releases**](https://github.com/angeluriot/Maze_solver/releases).
-
-<br/>
-
-# Tests
-
-Voici un test sous forme de gif animé :
+* The program is not interactive yet, it will only generate and solve mazes in loop.
 
 <br/>
 
-<p align="center">
-	<img src="https://i.imgur.com/898ieW2.gif" width="500">
-</p>
+# Credits
 
-<br/>
-
-# Crédits
-
-* [**Angel Uriot**](https://github.com/angeluriot) : Créateur du projet.
+* [**Angel Uriot**](https://github.com/angeluriot) : Creator of the project.
