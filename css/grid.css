@@ -1,0 +1,94 @@
+#grid
+{
+	background-color: rgb(231, 231, 233);
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	z-index: 2;
+	box-shadow: 0px 0px 30px rgba(6, 13, 29, 0.692);
+}
+
+#my_table
+{
+	border-spacing: 0;
+	border-collapse: collapse;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+}
+
+@-webkit-keyframes algo_in
+{
+	from { background-size: calc(0%) calc(0%); }
+	to { background-size: calc(100%) calc(100%); }
+}
+
+@keyframes algo_in
+{
+	from { background-size: calc(0%) calc(0%); }
+	to { background-size: calc(100%) calc(100%); }
+}
+
+.cell
+{
+	z-index: 5;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.cell_1
+{
+	background-color: rgb(255, 255, 255);
+}
+
+.cell_2
+{
+	background-color: rgb(231, 231, 233);
+}
+
+.cell_wall
+{
+	background-color: rgb(33, 40, 65);
+}
+
+.cell_algo
+{
+	background-image: url(../resources/shapes/algo.svg);
+	background-size: calc(100%) calc(100%);
+	-webkit-animation: algo_in 0.3s;
+	animation: algo_in 0.3s;
+}
+
+.cell_1.cell_path
+{
+	background-color: rgb(251, 244, 79);
+}
+
+.cell_2.cell_path
+{
+	background-color: rgb(245, 238, 73);
+}
+
+.cell_1.visited_cell
+{
+	background-color: rgb(164, 215, 246);
+}
+
+.cell_2.visited_cell
+{
+	background-color: rgb(152, 203, 235);
+}
+
+.start
+{
+	background-image: url(../resources/shapes/start.svg);
+	background-size: calc(100%) calc(100%);
+}
+
+.target
+{
+	background-image: url(../resources/shapes/target.svg);
+	background-size: calc(100%) calc(100%);
+}

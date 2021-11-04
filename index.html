@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta property="og:image" content="https://i.imgur.com/k7YnNTK.png" />
+		<meta property="og:image:width" content="1948" />
+		<meta property="og:image:height" content="1080" />
+
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<title>Maze solver</title>
+		<link rel="shortcut icon" type="image/png" href="resources/images/Favicon.png"/>
+
+		<link rel="stylesheet" type="text/css" href="css/menu.css"/>
+		<link rel="stylesheet" type="text/css" href="css/grid.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+		<script type="text/javascript" src="js/properties.js"></script>
+		<script type="text/javascript" src="js/maze_generators.js"></script>
+		<script type="text/javascript" src="js/maze_solvers.js"></script>
+		<script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript" src="js/visualizer.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</head>
+
+	<body>
+		<div id="menu">
+			<div id="menu_title_div">
+				<span id="menu_title">Settings</span>
+			</div>
+
+			<br><br>
+
+			<div class="choice" id="choice_1">
+				<span class="choice_label" id="choice_label_1">Maze solving algorithm</span>
+				<label class="select" for="slct_1">
+					<select id="slct_1" required="required">
+						<option selected value="1">Breadth-First</option>
+						<option value="2">Bidirectional Breadth-First</option>
+						<option value="3">Greedy Best-First</option>
+						<option value="4">Dijkstra</option>
+						<option value="5">A*</option>
+					</select>
+					<svg>
+						<use xlink:href="#select-arrow-down"></use>
+					</svg>
+				</label>
+			</div>
+
+			<div class="choice" id="choice_2">
+				<span class="choice_label" id="choice_label_2">Maze generation algorithm</span>
+				<label class="select" for="slct_2">
+					<select id="slct_2" required="required">
+						<option hidden selected value="0">Custom</option>
+						<option value="1">Randomized Depth-First</option>
+						<option value="2">Kruskal's Algorithm</option>
+						<option value="3">Prim's Algorithm</option>
+						<option value="4">Wilson's Algorithm</option>
+						<option value="5">Aldous-Broder Algorithm</option>
+						<option value="6">Recursive Division</option>
+					</select>
+					<svg>
+						<use xlink:href="#select-arrow-down"></use>
+					</svg>
+				</label>
+			</div>
+
+			<div id=button_1>
+				<button class="my_button" id="clear">Clear</button>
+			</div>
+
+			<div id=button_2>
+				<button class="my_button" id="play">Play</button>
+			</div>
+
+			<svg class="sprites">
+				<symbol id="select-arrow-down" viewbox="0 0 10 6">
+					<polyline points="1 1 5 5 9 1"></polyline>
+				</symbol>
+			</svg>
+		</div>
+
+		<div id="visualizer">
+			<div id="grid"></div>
+		</div>
+
+		<div id="hider"></div>
+	</body>
+</html>

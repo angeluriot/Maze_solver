@@ -1,0 +1,171 @@
+#menu_title_div
+{
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 60px;
+	background-color: #404d68;
+}
+
+#menu_title
+{
+	position: absolute;
+	color: rgb(255, 255, 255);
+	font-size: 25px;
+	transform: translate(-50%, -50%);
+	top: 46%;
+	left: 50%;
+}
+
+.choice
+{
+	min-height: 100vh;
+	justify-content: center;
+	box-sizing: border-box;
+	padding-left: 28px;
+	padding-right: 28px;
+	position: absolute;
+	width: 100%;
+}
+
+#choice_1
+{
+	top: 110px;
+}
+
+#choice_2
+{
+	top: 215px;
+}
+
+.choice_label
+{
+	white-space: nowrap;
+	color: #404d68;
+	font-size: 18px;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 0px;
+}
+
+.select
+{
+	position: relative;
+	min-width: 200px;
+	box-sizing: border-box;
+	top: 20px;
+}
+
+.select svg
+{
+	position: absolute;
+	right: 12px;
+	top: calc(50% - 3px);
+	width: 10px;
+	height: 6px;
+	stroke-width: 2px;
+	stroke: #9098a9;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	pointer-events: none;
+	box-sizing: border-box;
+}
+
+.select select
+{
+	-webkit-appearance: none;
+	padding: 7px 40px 7px 12px;
+	width: 100%;
+	border: 1px solid #c9cfd8;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0 1px 3px -2px #9098a9;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 18px;
+	transition: all 150ms ease;
+	box-sizing: border-box;
+	color: #404d68;
+}
+
+.select select option[value=""][disabled]
+{
+	display: none;
+	box-sizing: border-box;
+}
+
+.select select:focus
+{
+	outline: none;
+	border-color: #07f;
+	box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
+	box-sizing: border-box;
+}
+
+.select select:hover + svg
+{
+	stroke: #07f;
+	box-sizing: border-box;
+}
+
+.sprites
+{
+	position: absolute;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+#button_1
+{
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 40%;
+	top: 340px;
+	left: 50%;
+}
+
+#button_2
+{
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 40%;
+	top: 420px;
+	left: 50%;
+}
+
+.my_button
+{
+	-webkit-appearance: none;
+	padding: 7px 0px 7px 0px;
+	width: 100%;
+	border: 1px solid #c9cfd8;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0 1px 3px -2px #9098a9;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 18px;
+	transition: all 150ms ease;
+	box-sizing: border-box;
+	color: #404d68;
+	text-align: center;
+}
+
+.my_button:hover
+{
+	outline: none;
+	border-color: #07f;
+	box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
+	box-sizing: border-box;
+}
+
+#play
+{
+	background: rgb(48, 212, 84);
+	color: white;
+}
