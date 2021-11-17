@@ -9,6 +9,8 @@
 
 This repository contains the source code of a web page that can generate and solve mazes using several algorithms. You can also move the start and the finish or draw your own walls.
 
+The web page is online at the address : **[angeluriot.com/maze_solver](https://angeluriot.com/maze_solver/)**.
+
 <br/>
 
 <p align="center">
@@ -21,7 +23,6 @@ This repository contains the source code of a web page that can generate and sol
 
 * **[Summary](#summary)**
 * **[Features](#features)**
-* **[Access](#access)**
 * **[Tests](#tests)**
 	* [Maze generation algorithms](#maze-generation-algorithms)
 	* [Pathfinding algorithms](#pathfinding-algorithms)
@@ -56,12 +57,6 @@ This repository contains the source code of a web page that can generate and sol
 </p>
 
 * The `Clear` button allows you to clear the grid and the `Start` button runs the pathfinding algorithm
-
-<br/>
-
-# Access
-
-The web page is online at the address : **[angeluriot.com/maze_solver](https://angeluriot.com/maze_solver/)**.
 
 <br/>
 
