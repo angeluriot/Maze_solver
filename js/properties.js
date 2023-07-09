@@ -3,9 +3,12 @@
 const initial_max_grid_size = 47;
 const menu_width = 323;
 
-let cell_size;
-let grid_size_x;
-let grid_size_y;
+
+let grid_size_x = 21;
+let grid_size_y = 21;
+let cell_size = 40;
+
+
 let grid;
 let clicking = false;
 let moving_start = false;

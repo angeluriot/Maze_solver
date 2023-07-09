@@ -128,6 +128,7 @@ function kruskal_algorithm()
 				clearInterval(my_interval);
 				clear_grid();
 				generating = false;
+				finish_generate();
 				return;
 			}
 
@@ -498,4 +499,11 @@ function maze_generators()
 
 	else if (document.querySelector("#slct_2").value == "6")
 		recursive_division();
+}
+
+function finish_generate() {
+	grid[start_pos[1]][start_pos[0]] = 2;
+	console.log(grid);
+	console.log(start_pos);
+	console.log(target_pos);
 }
