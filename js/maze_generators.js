@@ -278,9 +278,6 @@ function wilson_algorithm()
 				random_walk = true;
 				first_step = current_cell;
 
-				for (let i = 0; i < new_way_list.length; i++)
-					//place_to_cell(new_way_list[i][0], new_way_list[i][1]).classList.add("visited_cell");
-
 				new_way_list = [];
 			}
 
