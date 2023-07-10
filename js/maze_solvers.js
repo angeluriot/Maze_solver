@@ -11,7 +11,6 @@ function maze_solvers_interval()
 	{
 		if (!path)
 		{
-			place_to_cell(node_list[node_list_index][0], node_list[node_list_index][1]).classList.add("cell_algo");
 			node_list_index++;
 
 			if (node_list_index == node_list.length)
@@ -22,7 +21,6 @@ function maze_solvers_interval()
 				else
 				{
 					path = true;
-					place_to_cell(start_pos[0], start_pos[1]).classList.add("cell_path");
 				}
 			}
 		}
@@ -31,13 +29,11 @@ function maze_solvers_interval()
 		{
 			if (path_list_index == path_list.length)
 			{
-				place_to_cell(target_pos[0], target_pos[1]).classList.add("cell_path");
 				clearInterval(my_interval);
+				console.log(path_list);
 				return;
 			}
 
-			place_to_cell(path_list[path_list_index][0], path_list[path_list_index][1]).classList.remove("cell_algo");
-			place_to_cell(path_list[path_list_index][0], path_list[path_list_index][1]).classList.add("cell_path");
 			path_list_index++;
 		}
 	}, 10);
@@ -329,28 +325,29 @@ function a_star()
 
 function maze_solvers()
 {
+	console.log("Starting maze solving");
 	clear_grid();
 	grid_clean = false;
+	clear_grid();
 
-	if ((Math.abs(start_pos[0] - target_pos[0]) == 0 && Math.abs(start_pos[1] - target_pos[1]) == 1) ||
-		(Math.abs(start_pos[0] - target_pos[0]) == 1 && Math.abs(start_pos[1] - target_pos[1]) == 0))
-		{
-			place_to_cell(start_pos[0], start_pos[1]).classList.add("cell_path");
-			place_to_cell(target_pos[0], target_pos[1]).classList.add("cell_path");
-		}
-
-	else if (document.querySelector("#slct_1").value == "1")
-		breadth_first();
-
-	else if (document.querySelector("#slct_1").value == "2")
-		bidirectional_breadth_first();
-
-	else if (document.querySelector("#slct_1").value == "3")
-		greedy_best_first();
-
-	else if (document.querySelector("#slct_1").value == "4")
-		dijkstra();
-
-	else if (document.querySelector("#slct_1").value == "5")
-		a_star();
+	switch(selectedSolveAlgorithm) {
+		case 1:
+			breadth_first();
+			break;
+		case 2:
+			bidirectional_breadth_first();
+			break;
+		case 3:
+			greedy_best_first();
+			break;
+		case 4:
+			dijkstra();
+			break;
+		case 5:
+			a_star();
+			break;
+		default:
+			dijkstra();
+			break;
+	}
 }
