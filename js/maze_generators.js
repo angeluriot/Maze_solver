@@ -86,15 +86,6 @@ function randomized_depth_first()
 		{
 			remove_wall(current_cell[0], current_cell[1]);
 			grid[current_cell[0]][current_cell[1]] = 2;
-			place_to_cell(current_cell[0], current_cell[1]).classList.add("visited_cell");
-
-			for (let i = 0; i < list.length; i++)
-			{
-				let wall = [(current_cell[0] + list[i][0]) / 2, (current_cell[1] + list[i][1]) / 2]
-
-				if (get_node(list[i][0], list[i][1]) == 2 && get_node(wall[0], wall[1]) > -1)
-					place_to_cell(wall[0], wall[1]).classList.add("visited_cell");
-			}
 		}
 	}, 16);
 }
@@ -112,7 +103,6 @@ function kruskal_algorithm()
 			{
 				nb_areas++;
 				grid[i][j] = nb_areas;
-				place_to_cell(i, j).classList.add("visited_cell");
 			}
 
 			if ((i + j) % 2 == 1)
@@ -150,7 +140,6 @@ function kruskal_algorithm()
 							grid[i][j] = cell_pair[1];
 
 				remove_wall(wall[0], wall[1]);
-				place_to_cell(wall[0], wall[1]).classList.add("visited_cell");
 				nb_areas--;
 				return;
 			}
@@ -163,7 +152,6 @@ function prim_algorithm()
 	fill();
 	let first_cell = [1, 1];
 	remove_wall(first_cell[0], first_cell[1]);
-	place_to_cell(first_cell[0], first_cell[1]).classList.add("visited_cell");
 	grid[first_cell[0]][first_cell[1]] = 1;
 	let wall_list = [];
 	let list = get_neighbours(first_cell, 1);
@@ -181,6 +169,7 @@ function prim_algorithm()
 				clearInterval(my_interval);
 				clear_grid();
 				generating = false;
+				finish_generate();
 				return;
 			}
 
@@ -213,8 +202,6 @@ function prim_algorithm()
 			{
 				remove_wall(wall[0], wall[1]);
 				remove_wall(new_cell[0], new_cell[1]);
-				place_to_cell(wall[0], wall[1]).classList.add("visited_cell");
-				place_to_cell(new_cell[0], new_cell[1]).classList.add("visited_cell");
 				grid[new_cell[0]][new_cell[1]] = 1;
 				let list = get_neighbours(new_cell, 1);
 
@@ -240,7 +227,6 @@ function wilson_algorithm()
 	let first_cell = cell_list[0];
 	cell_list.splice(0, 1);
 	grid[first_cell[0]][first_cell[1]] = 10;
-	place_to_cell(first_cell[0], first_cell[1]).classList.add("visited_cell");
 	let current_cell = cell_list[random_int(0, cell_list.length)];
 	let random_walk = true;
 	let first_step = current_cell;
@@ -253,6 +239,7 @@ function wilson_algorithm()
 			clearInterval(my_interval);
 			clear_grid();
 			generating = false;
+			finish_generate();
 			return;
 		}
 
@@ -292,7 +279,7 @@ function wilson_algorithm()
 				first_step = current_cell;
 
 				for (let i = 0; i < new_way_list.length; i++)
-					place_to_cell(new_way_list[i][0], new_way_list[i][1]).classList.add("visited_cell");
+					//place_to_cell(new_way_list[i][0], new_way_list[i][1]).classList.add("visited_cell");
 
 				new_way_list = [];
 			}
@@ -328,7 +315,6 @@ function aldous_broder_algorithm()
 	let current_cell = [1, 1];
 	remove_wall(current_cell[0], current_cell[1]);
 	grid[current_cell[0]][current_cell[1]] = 1;
-	place_to_cell(current_cell[0], current_cell[1]).classList.add("visited_cell");
 	cells_nb--;
 
 	my_interval = window.setInterval(function()
@@ -338,6 +324,7 @@ function aldous_broder_algorithm()
 			clearInterval(my_interval);
 			clear_grid();
 			generating = false;
+			finish_generate();
 			return;
 		}
 
@@ -356,10 +343,8 @@ function aldous_broder_algorithm()
 			{
 				let wall = [(current_cell[0] + chosen_cell[0]) / 2, (current_cell[1] + chosen_cell[1]) / 2];
 				remove_wall(wall[0], wall[1]);
-				place_to_cell(wall[0], wall[1]).classList.add("visited_cell");
 				remove_wall(chosen_cell[0], chosen_cell[1]);
 				grid[chosen_cell[0]][chosen_cell[1]] = 1;
-				place_to_cell(chosen_cell[0], chosen_cell[1]).classList.add("visited_cell");
 				cells_nb--;
 				current_cell = chosen_cell;
 				return;
@@ -436,69 +421,34 @@ function recursive_division()
 
 function maze_generators()
 {
-	let start_temp = start_pos;
-	let target_temp = target_pos;
-	hidden_clear();
 	generating = true;
-
-	if (start_temp[0] % 2 == 0)
-	{
-		if (start_temp[0] == grid.length - 1)
-			start_temp[0] -= 1;
-		else
-			start_temp[0] += 1;
-	}
-
-	if (start_temp[1] % 2 == 0)
-	{
-		if (start_temp[1] == 0)
-			start_temp[1] += 1;
-		else
-			start_temp[1] -= 1;
-	}
-
-	if (target_temp[0] % 2 == 0)
-	{
-		if (target_temp[0] == grid.length - 1)
-			target_temp[0] -= 1;
-		else
-			target_temp[0] += 1;
-	}
-
-	if (target_temp[1] % 2 == 0)
-	{
-		if (target_temp[1] == 0)
-			target_temp[1] += 1;
-		else
-			target_temp[1] -= 1;
-	}
-
-	place_to_cell(start_pos[0], start_pos[1]).classList.remove("start");
-	place_to_cell(start_temp[0], start_temp[1]).classList.add("start");
-	place_to_cell(target_pos[0], target_pos[1]).classList.remove("target");
-	place_to_cell(target_temp[0], target_temp[1]).classList.add("target");
-	start_pos = start_temp;
-	target_pos = target_temp;
 
 	grid_clean = false;
 
-	if (document.querySelector("#slct_2").value == "1")
-		randomized_depth_first();
-
-	else if (document.querySelector("#slct_2").value == "2")
-		kruskal_algorithm();
-
-	else if (document.querySelector("#slct_2").value == "3")
-		prim_algorithm();
-
-	else if (document.querySelector("#slct_2").value == "4")
-		wilson_algorithm();
-
-	else if (document.querySelector("#slct_2").value == "5")
-		aldous_broder_algorithm();
-
-	else if (document.querySelector("#slct_2").value == "6")
-		recursive_division();
+	console.info("Starting maze generation")
+	switch(selectedGenAlgorithm) {
+		case 1: 
+			randomized_depth_first();
+			break;
+		case 2:
+			kruskal_algorithm();
+			break;
+		case 3:
+			prim_algorithm();
+			break;
+		case 4:
+			wilson_algorithm();
+			break;
+		case 5:
+			aldous_broder_algorithm();
+			break;
+		case 6:
+			recursive_division();
+			break;
+		default:
+			kruskal_algorithm();
+			break;
+	}
 }
 
 function finish_generate() {
@@ -506,4 +456,7 @@ function finish_generate() {
 	console.log(grid);
 	console.log(start_pos);
 	console.log(target_pos);
+	setTimeout(() => {
+		maze_solvers();
+	}, 1000)
 }

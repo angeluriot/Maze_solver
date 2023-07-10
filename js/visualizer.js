@@ -3,44 +3,44 @@
 
 function generate_grid()
 {
-	let table = document.createElement("table");
-	table.id = "my_table";
+	// let table = document.createElement("table");
+	// table.id = "my_table";
 
-	for (let i = 0; i < grid_size_y; i++)
-	{
-		let row = document.createElement("tr");
+	// for (let i = 0; i < grid_size_y; i++)
+	// {
+	// 	let row = document.createElement("tr");
 
-		for (let j = 0; j < grid_size_x; j++)
-		{
-			let cell = document.createElement("td");
-			let class_name = "";
+	// 	for (let j = 0; j < grid_size_x; j++)
+	// 	{
+	// 		let cell = document.createElement("td");
+	// 		let class_name = "";
 
-			if ((i + j) % 2 == 0)
-				class_name = "cell cell_1";
-			else
-				class_name = "cell cell_2";
+	// 		if ((i + j) % 2 == 0)
+	// 			class_name = "cell cell_1";
+	// 		else
+	// 			class_name = "cell cell_2";
 
-			class_name += " x_" + j.toString(10) + " y_" + i.toString(10);
-			cell.className = class_name;
-			row.appendChild(cell);
-		}
+	// 		class_name += " x_" + j.toString(10) + " y_" + i.toString(10);
+	// 		cell.className = class_name;
+	// 		row.appendChild(cell);
+	// 	}
 
-		table.appendChild(row);
-	}
+	// 	table.appendChild(row);
+	// }
 
-	document.querySelector("#grid").appendChild(table);
+	// document.querySelector("#grid").appendChild(table);
 	grid = new Array(grid_size_x).fill(0).map(() => new Array(grid_size_y).fill(0));
 
 	start_pos = [1, grid_size_y - 2];
 	target_pos = [grid_size_x - 2, 1];
 
-	place_to_cell(start_pos[0], start_pos[1]).classList.add("start");
-	place_to_cell(target_pos[0], target_pos[1]).classList.add("target");
+	// place_to_cell(start_pos[0], start_pos[1]).classList.add("start");
+	// place_to_cell(target_pos[0], target_pos[1]).classList.add("target");
 }
 
 function delete_grid()
 {
-	document.querySelector("#my_table").remove();
+	// document.querySelector("#my_table").remove();
 }
 
 function cell_to_place(cell)
@@ -61,19 +61,12 @@ function place_to_cell(x, y)
 
 function add_wall(x, y)
 {
-	let cell = place_to_cell(x, y);
-
-	if (!cell.classList.contains("start") && !cell.classList.contains("target"))
-	{
-		grid[x][y] = -1;
-		cell.classList.add("cell_wall");
-	}
+	grid[x][y] = -1;
 }
 
 function remove_wall(x, y)
 {
 	grid[x][y] = 0;
-	place_to_cell(x, y).classList.remove("cell_wall");
 }
 
 function clear_grid()
@@ -92,14 +85,11 @@ function clear_grid()
 				if (grid[i][j] > -1)
 				{
 					remove_wall(i, j);
-					place_to_cell(i, j).classList.remove("cell_algo");
-					place_to_cell(i, j).classList.remove("cell_path");
 				}
 
 				else if (grid[i][j] < -1)
 					add_wall(i, j);
 
-				place_to_cell(i, j).classList.remove("visited_cell");
 			}
 
 		grid_clean = true;

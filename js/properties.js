@@ -4,9 +4,31 @@ const initial_max_grid_size = 47;
 const menu_width = 323;
 
 
-let grid_size_x = 21;
-let grid_size_y = 21;
-let cell_size = 40;
+const grid_size_x = 21;
+const grid_size_y = 21;
+const cell_size = 40;
+
+/*  Generator algorithms
+*
+*   1 - Randomized depth first
+*   2 - Krusal algorithm
+*   3 - Prim algorithm
+*   4 - Wilson algorithm
+*   5 - Aldous Broder algorithm
+*   6 - Recursive division
+*/
+const selectedGenAlgorithm = 2;
+
+/*  Solver algorithms
+*
+*   1 - Breadth first
+*   2 - Bidirectional breath first
+*   3 - Greedy best first
+*   4 - Dijkstra
+*   5 - A Star
+*/
+
+const selectedSolveAlgorithm = 1;
 
 
 let grid;
