@@ -1,0 +1,23 @@
+{
+  "name": "maze",
+  "version": "1.0.0",
+  "author": "Psyanide <martin19957777@gmail.com>",
+  "contributors": [
+    {
+      "name": "Angel Uriot",
+      "email": "angel.uriot@gmail.com",
+      "url": "https://github.com/angeluriot"
+    }
+  ],
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "source-map-loader": "^4.0.1",
+    "ts-loader": "^9.4.4"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
