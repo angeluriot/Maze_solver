@@ -1,4 +1,4 @@
-# Maze solver
+# 🗺️ Maze solver
 
 ![Release](https://img.shields.io/badge/Release-v4.0-blueviolet)
 ![Language](https://img.shields.io/badge/Language-JavaScript-ffcc14)
@@ -19,18 +19,18 @@ The web page is online at the address : **[angeluriot.com/maze_solver](https://a
 
 <br/>
 
-# Summary
+# 📋 Summary
 
-* **[Summary](#summary)**
-* **[Features](#features)**
-* **[Tests](#tests)**
-	* [Maze generation algorithms](#maze-generation-algorithms)
-	* [Pathfinding algorithms](#pathfinding-algorithms)
-* **[Credits](#credits)**
+* **[📋 Summary](#-summary)**
+* **[✨ Features](#-features)**
+* **[🧪 Tests](#-tests)**
+	* [🌀 Maze generation algorithms](#-maze-generation-algorithms)
+	* [➡️ Pathfinding algorithms](#%EF%B8%8F-pathfinding-algorithms)
+* **[🙏 Credits](#-credits)**
 
 <br/>
 
-# Features
+# ✨ Features
 
 * You can choose the pathfinding algorithm of the maze solver :
 
@@ -60,9 +60,9 @@ The web page is online at the address : **[angeluriot.com/maze_solver](https://a
 
 <br/>
 
-# Tests
+# 🧪 Tests
 
-### Maze generation algorithms
+## 🌀 Maze generation algorithms
 
 * **Randomized Depth-First :**
 
@@ -114,7 +114,7 @@ The web page is online at the address : **[angeluriot.com/maze_solver](https://a
 
 <br/>
 
-### Pathfinding algorithms
+## ➡️ Pathfinding algorithms
 
 * **Breadth-First** *(Slow but gives the shortest path)* **:**
 
@@ -158,6 +158,6 @@ The web page is online at the address : **[angeluriot.com/maze_solver](https://a
 
 <br/>
 
-# Credits
+# 🙏 Credits
 
 * [**Angel Uriot**](https://github.com/angeluriot) : Creator of the project.
